@@ -21,6 +21,7 @@
             <div class="cards">
                 <Card v-for="card in store.cardsInfo" :key="card.id" :cardInfo="card"></Card>
             </div>
+            <div class="counter">La tua ricerca ha prodotto {{ store.cardsInfo.length }} risultati</div>
         </div>
     </main>
 </template>
@@ -38,6 +39,12 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+        }
+
+        .counter{
+            color: white;
+            text-align: center;
+            font-weight: bolder;
         }
     }
 </style>
