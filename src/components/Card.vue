@@ -14,7 +14,7 @@
             <img :src="cardInfo.card_images[0].image_url">
         </div>
         <div>{{ cardInfo.name }}</div>
-        <div>{{ cardInfo.archetype }}</div>
+        <div class="archetype">{{ cardInfo.archetype }}</div>
     </div>
 </template>
 
@@ -24,13 +24,21 @@
 .card{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: 5px;
-    width: calc((100% / 5) - 20px);
+    width: calc((100% / 5) - 25px);
     text-align: center;
     font-weight: bolder;
+    font-size: 12px;
     color: white;
     margin-bottom: 20px;
     border-radius: 10px;
+    white-space:nowrap;
+    height: max-content;
+
+    .archetype{
+        color: #57e9d0;
+    }
 
     img{
         height: 100%;

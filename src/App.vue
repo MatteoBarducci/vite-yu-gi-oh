@@ -3,12 +3,15 @@
   import { store } from './store';
   import AppHeader from './components/AppHeader.vue';
   import AppMain from './components/AppMain.vue';
+  import Filter from './components/Filter.vue';
+
 
 
   export default{
     components: {
       AppHeader,
-      AppMain
+      AppMain,
+      Filter,
     },
     data() {
       return {
@@ -16,15 +19,33 @@
       };
     },
     methods: {
+      
       getCardsFromApi(){
+      let apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+      let queryParams = {
+        num: '20',
+        offset: '0',
+      };
+      if (store.searchedArchetype !== ''){
+        queryParams.archetype = store.searchedArchetype
+      }
         // Prende le card dall'API e popola nello store
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        axios.get(apiUrl, {params: queryParams})
         .then((response) => {
           store.cardsInfo = response.data.data;
         });
-      }
+      },
+      getArchetypesFromApi(){
+        // Prende gli archetipi e popola l'array nello store
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then((response) =>{
+          store.archetypes = response.data
+        })
+      },
+
     },
     mounted(){
+      this.getArchetypesFromApi();
       this.getCardsFromApi();
     }
   }
@@ -33,6 +54,7 @@
 <template>
   <div class="bg">
     <AppHeader></AppHeader>
+    <Filter @archetypeSelected="getCardsFromApi"></Filter>
     <main>
       <AppMain></AppMain>
     </main>
