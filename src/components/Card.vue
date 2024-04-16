@@ -30,6 +30,8 @@
     text-align: center;
     font-weight: bolder;
     color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
 
     img{
         height: 100%;

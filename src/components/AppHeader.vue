@@ -6,7 +6,7 @@
 
 <template>
     <header>
-        <img src="https://vignette1.wikia.nocookie.net/yugiohenespanol/images/a/aa/Yugioh_anime_logo.jpg/revision/latest?cb=20130310042737&path-prefix=es" alt="Yu-gi-oh logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Yu-Gi-Oh%21.png" alt="Yu-gi-oh logo">
     </header>
 </template>
 
