@@ -26,7 +26,6 @@
     flex-direction: column;
     gap: 5px;
     width: calc((100% / 5) - 20px);
-    background-color: rgba(0, 0, 0, 0.232);
     text-align: center;
     font-weight: bolder;
     color: white;

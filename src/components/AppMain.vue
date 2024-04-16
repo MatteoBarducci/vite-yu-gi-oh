@@ -29,6 +29,11 @@
 @use '../style/partials/variables.scss' as *;
 
     main{
+        .main-container{
+            background-color: rgba(0, 0, 0, 0.496);
+            padding: 35px;
+            border-radius: 20px;
+        }
         .cards{
             display: flex;
             justify-content: space-between;

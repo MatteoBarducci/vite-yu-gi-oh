@@ -16,10 +16,11 @@
 header{
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 img{
-    height: 70px;
+    height: 90px;
 }
 
     
